@@ -6,10 +6,10 @@ const { promisify } = require('util')
 const readFile = promisify(fs.readFile)
 const GPT_MODE = process.env.GPT_MODE
 
-let file_context = "You are a helpful Twitch Chatbot."
+let file_context = "you are a grumpy youtube chat bot."
 
 const messages = [
-  {role: "system", content: "You are a helpful Twitch Chatbot."}
+  {role: "system", content: "you are a grumpy youtube chat bot."}
 ];
 
 console.log("GPT_MODE is " + GPT_MODE)
@@ -108,7 +108,7 @@ app.get('/gpt/:text', async (req, res) => {
         model: "text-davinci-003",
         prompt: prompt,
         temperature: 0.5,
-        max_tokens: 128,
+        max_tokens: 64,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,
